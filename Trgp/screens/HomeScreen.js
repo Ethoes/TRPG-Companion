@@ -61,24 +61,24 @@ export default class HomeScreen extends React.Component {
       },
       textCalc: {
         textAlign: "center",
-        top: height * 0.3,
+        top: height * 0.25,
 
       },
       buttonCalc:{
         height: height * 0.06,
         width: width * 0.6,
-        top: Dimensions.get('window').height * 0.32,
+        top: Dimensions.get('window').height * 0.27,
         alignSelf: "center"
       },
       textEdit: {
         textAlign: "center",
-        bottom: height * 0.32,
+        bottom: height * -0.48,
 
       },
       buttonEdit:{
         height: height * 0.06,
         width: width * 0.6,
-        bottom: Dimensions.get('window').height * -0.3,
+        bottom: Dimensions.get('window').height * -0.5,
         alignSelf: "center"
       },
     });
