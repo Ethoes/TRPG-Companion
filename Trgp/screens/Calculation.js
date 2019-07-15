@@ -16,10 +16,18 @@ export default class Calculation extends React.Component {
       header: null,
     };
 
+    renderItems() {
+      const items = [];
+      characters.forEach( ( dataItem ) => {
+        items.push( <Text>{ dataItem.name }</Text> );
+      } )
+      return items;
+    }
+
     render() {
         return (
           <View style={styles.container}>
-              <Text>{SBEVE.HP}</Text>
+              {this.renderItems()}
           </View>
         );
       }
