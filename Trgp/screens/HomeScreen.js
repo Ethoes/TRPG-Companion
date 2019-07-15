@@ -4,6 +4,9 @@ import {
   View,
   Text,
   Button,
+  Dimensions,
+  TouchableNativeFeedback,
+  Image,
 } from 'react-native';
 
 //This is the object which renders everything in the main screen
@@ -17,24 +20,65 @@ export default class HomeScreen extends React.Component {
         const {navigate} = this.props.navigation;
         return (
           <View style={styles.container}>
-              <Text>This is the homeScreen!</Text>
+              <Text  style={styles.textCalc}>This is the homeScreen!</Text>
 
-              <Button title="go to calculation"
-              onPress={() => navigate('Calculation', {name: 'Jane'})}/>
+              <TouchableNativeFeedback
+              onPress={() => navigate('Calculation', {name: 'Jane'})}>
+                <Image 
+                  source={
+                    require('../assets/calcButton.png')
+                  }
+                  style={styles.buttonCalc}
+                />
+              </TouchableNativeFeedback>
+
+              <Text  style={styles.textEdit}>This is the homeScreen!</Text>
+
+              <TouchableNativeFeedback
+              onPress={() => navigate('Calculation', {name: 'Jane'})}>
+                <Image 
+                  source={
+                    require('../assets/calcButton.png')
+                  }
+                  style={styles.buttonEdit}
+                />
+              </TouchableNativeFeedback>
 
           </View>
         );
       }
     }
     
+    var width = Dimensions.get('window').width;
+    var height = Dimensions.get('window').height;
     
     //css-like files start here
     const styles = StyleSheet.create({
       //Main image css
       container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        width: width,
+        height: height,
+      },
+      textCalc: {
+        textAlign: "center",
+        top: height * 0.3,
+
+      },
+      buttonCalc:{
+        height: height * 0.06,
+        width: width * 0.6,
+        top: Dimensions.get('window').height * 0.32,
+        alignSelf: "center"
+      },
+      textEdit: {
+        textAlign: "center",
+        bottom: height * 0.32,
+
+      },
+      buttonEdit:{
+        height: height * 0.06,
+        width: width * 0.6,
+        bottom: Dimensions.get('window').height * -0.3,
+        alignSelf: "center"
       },
     });
