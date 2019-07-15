@@ -4,6 +4,7 @@ import {
   View,
   Text,
   Dimensions,
+  ScrollView,
 } from 'react-native';
 import characters from '../screens/Database/CharacterDatabase'
 
@@ -26,9 +27,9 @@ export default class Calculation extends React.Component {
 
     render() {
         return (
-          <View style={styles.container}>
+          <ScrollView style={styles.container}>
               {this.renderItems()}
-          </View>
+          </ScrollView>
         );
       }
     }
@@ -40,7 +41,7 @@ export default class Calculation extends React.Component {
       container: {
         flex: 1,
         backgroundColor: '#fff',
-        top: Dimensions.get('window').height * 0.1,
+        // top: Dimensions.get('window').height * 0.1,
         left: Dimensions.get('window').width *0.2,
       },
     });
