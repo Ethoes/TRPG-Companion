@@ -3,7 +3,11 @@ import {
   StyleSheet,
   View,
   Text,
+  Dimensions,
 } from 'react-native';
+import characters from '../screens/Database/CharacterDatabase'
+
+const SBEVE = characters[0]; 
 
 //This is the object which renders everything in the main screen
 export default class Calculation extends React.Component {
@@ -15,7 +19,7 @@ export default class Calculation extends React.Component {
     render() {
         return (
           <View style={styles.container}>
-              <Text>This is the calculation screen!</Text>
+              <Text>{SBEVE.HP}</Text>
           </View>
         );
       }
@@ -30,5 +34,6 @@ export default class Calculation extends React.Component {
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        top: Dimensions.get('window').height * 0.2,
       },
     });
