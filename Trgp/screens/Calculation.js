@@ -19,7 +19,7 @@ export default class Calculation extends React.Component {
     renderItems() {
       const items = [];
       characters.forEach( ( dataItem ) => {
-        items.push( <Text>{ dataItem.name }</Text> );
+        items.push( <Text>name : { dataItem.name } {"\n"}hitpoints: {dataItem.HP} {"\n"}strength: {dataItem.strength} {"\n"}endurance: {dataItem.endurance} {"\n"}</Text> );
       } )
       return items;
     }
@@ -40,8 +40,7 @@ export default class Calculation extends React.Component {
       container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-        top: Dimensions.get('window').height * 0.2,
+        top: Dimensions.get('window').height * 0.1,
+        left: Dimensions.get('window').width *0.2,
       },
     });
